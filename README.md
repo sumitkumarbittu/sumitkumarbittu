@@ -1,128 +1,90 @@
-<h1 align="center">Hey 👋 What's Up? I'm Sumit Kumar</h1>
+<h2 align="left">Hi 👋! My name is Sumit Kumar and I'm a Software Engineer & IoT Systems Developer from India.</h2>
 
 ###
 
-<h3 align="center">💻 Software Engineer | 🌐 IoT & Data Systems Developer | 📊 Python Enthusiast | 🧠 Curious Learner</h3>
-
----
-
-<p align="center">
-Welcome to my digital workspace!  
-I'm <b>Sumit Kumar</b> — a passionate technologist who loves transforming complex ideas into elegant, data-driven, and automated solutions.  
-I thrive at the intersection of <b>IoT, software design, and data visualization</b>, where intelligent systems meet real-world applications.
-</p>
-
----
-
-<h2 align="center">⚙️ Tech Stack & Tools</h2>
-
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=py,cpp,flask,dash,html,css,js,git,linux,aws" height="60" alt="tech stack logos" />
+  <img src="https://github-readme-stats.vercel.app/api?username=sumitkumarbittu&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=sumitkumarbittu&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=6&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
 </div>
 
-<p align="center">
-I primarily work with <b>Python</b> and <b>C++</b> to design modular and scalable systems.  
-My focus lies in developing backend solutions, APIs, and analytical dashboards that turn raw data into actionable insights.  
-I also enjoy writing clean, readable, and well-documented code — the kind that tells a story even without comments.
-</p>
+###
 
----
+<img align="right" height="150" src="https://i.imgflip.com/65efzo.gif"  />
 
-<h2 align="center">🚀 About Me</h2>
+###
 
-<p>
-I started my journey with curiosity — learning how systems communicate, how data flows, and how automation can simplify everyday processes.  
-Over time, this curiosity evolved into a passion for building systems that make a tangible impact — whether it’s optimizing workflows, visualizing insights, or enabling real-time IoT communication.
-</p>
-
-<ul>
-  <li>🔭 <b>Currently working on:</b> IoT-integrated automation and data visualization systems for industrial and environmental applications.</li>
-  <li>🌱 <b>Learning:</b> Advanced Flask & Dash development, API scalability, and real-time analytics pipelines.</li>
-  <li>👯 <b>Looking to collaborate on:</b> Projects related to IoT, AI-assisted analytics, or interactive dashboards.</li>
-  <li>💬 <b>Ask me about:</b> Python module design, inline functions in C++, system optimization, or sentiment analysis.</li>
-  <li>⚡ <b>Fun fact:</b> I debug systems faster when I explain the problem out loud — sometimes to my coffee mug ☕.</li>
-</ul>
-
----
-
-<h2 align="center">🏗️ Featured Projects</h2>
-
-<ul>
-  <li>🧩 <b>Dexter</b> — A full-stack text submission and management system featuring real-time updates and clean UI design.</li>
-  <li>📊 <b>DataVisualizer</b> — A Python + Dash app that transforms CSV datasets into intelligent, interactive visualizations.</li>
-  <li>💾 <b>AdvancedLZW</b> — A file compressor/decompressor built in C++ using the LZW algorithm, designed for performance and academic clarity.</li>
-  <li>🌿 <b>Dynamic Scent Distribution System</b> — An IoT-powered environmental control system that adjusts scent diffusion dynamically for immersive experiences.</li>
-  <li>🧠 <b>Customer Feedback Analyzer</b> — Sentiment analysis system that processes and visualizes user feedback to reveal actionable business insights.</li>
-  <li>🎓 <b>GEU Connect</b> — An appointment management platform connecting students and faculty efficiently in academic settings.</li>
-</ul>
-
-<p align="center">
-🔗 Explore more of my projects at <a href="https://github.com/sumitkumarbittu" target="_blank"><b>github.com/sumitkumarbittu</b></a>
-</p>
-
----
-
-<h2 align="center">🧰 Core Strengths</h2>
-
-<div align="center">
-
-| Category | Skills & Tools |
-|-----------|----------------|
-| **Programming Languages** | Python, C++, JavaScript |
-| **Frameworks** | Flask, Dash |
-| **Data Science & Analytics** | Pandas, NumPy, scikit-learn |
-| **Visualization & Dashboards** | Dash, Plotly, Streamlit |
-| **IoT & Automation** | Sensor integration, Real-time data flow, Feedback control loops |
-| **Version Control** | Git, GitHub |
-| **System Design** | API development, Lock management, Distributed systems |
-
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="30" alt="cplusplus logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" height="30" alt="flask logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="30" alt="linux logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" height="30" alt="aws logo"  />
 </div>
 
----
+###
 
-<h2 align="center">📈 GitHub Analytics</h2>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=sumitkumarbittu&theme=dracula&hide_border=false" height="150" alt="streak graph" />
-  <img src="https://github-profile-trophy.vercel.app/?username=sumitkumarbittu&theme=dracula&no-frame=false&no-bg=false&margin-w=8" height="150" alt="trophy graph" />
-</div>
-
----
-
-<h2 align="center">🌐 Connect With Me</h2>
-
-<div align="center">
+<div align="left">
   <a href="https://www.linkedin.com/in/sumitkumarbittu/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&style=for-the-badge" height="30" alt="LinkedIn badge" />
-  </a>
-  <a href="https://github.com/sumitkumarbittu" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=GitHub&logo=github&label=&color=181717&logoColor=white&style=for-the-badge" height="30" alt="GitHub badge" />
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
   </a>
   <a href="mailto:sumitkumarbittu@gmail.com">
-    <img src="https://img.shields.io/static/v1?message=Email&logo=gmail&label=&color=D14836&logoColor=white&style=for-the-badge" height="30" alt="Gmail badge" />
+    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
+  </a>
+  <a href="https://github.com/sumitkumarbittu" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=GitHub&logo=github&label=&color=181717&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="github logo"  />
   </a>
 </div>
 
----
+###
 
-<h2 align="center">🕹️ Fun Corner</h2>
+<h3 align="left">🚀 About Me</h3>
 
-<p align="center">
-  I believe coding should be as creative as it is logical.  
-  When I’m not writing Python scripts or debugging C++ functions,  
-  I love exploring how technology can merge with everyday life — from smart automation to immersive IoT experiences.  
+<p align="left">
+I’m an enthusiastic engineer who loves transforming data, automation, and IoT systems into powerful, intelligent solutions.  
+I work extensively with <b>Python</b> (for backend automation, analytics & visualization) and <b>C++</b> (for performance-critical tasks and embedded logic).  
+I’ve designed systems ranging from automated <b>waste sorting</b> and <b>scent distribution</b> mechanisms to <b>feedback analysis platforms</b> and <b>IoT dashboards</b>.
 </p>
 
-<p align="center">
-  Here’s a little visual reward 👇
-</p>
+<ul>
+  <li>🔭 Currently building and documenting Python-based IoT automation projects.</li>
+  <li>🌱 Exploring <b>Flask</b>, <b>Dash</b>, and real-time data analytics integrations.</li>
+  <li>💬 Ask me about: <b>Python modules</b>, <b>C++ inline functions</b>, or <b>data-driven automation</b>.</li>
+  <li>⚡ Fun fact: I debug faster when I explain the problem to my coffee mug ☕.</li>
+</ul>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maurodesouza/maurodesouza/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maurodesouza/maurodesouza/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/maurodesouza/maurodesouza/output/pacman-contribution-graph.svg">
-</picture>
+###
 
----
+<h3 align="left">📂 Featured Projects</h3>
 
-<h3 align="center">⭐ “Turning data and code into systems that make a difference.”</h3>
+<ul>
+  <li>🧩 <b>Dexter</b> — Full-stack text submission and management platform with real-time updates.</li>
+  <li>📊 <b>DataVisualizer</b> — Turn CSV datasets into clean, interactive dashboards using Python & Dash.</li>
+  <li>💾 <b>AdvancedLZW</b> — Academic-grade file compressor/decompressor implemented in C++.</li>
+  <li>🌿 <b>Dynamic Scent Distribution System</b> — IoT-driven automation for immersive experiences.</li>
+  <li>🧠 <b>Customer Feedback Analyzer</b> — Sentiment analysis tool for actionable insights.</li>
+  <li>🎓 <b>GEU Connect</b> — Academic appointment scheduling system for better collaboration.</li>
+</ul>
+
+###
+
+<br clear="both">
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/maurodesouza/maurodesouza/output/snake.svg" alt="Snake animation" />
+</div>
+
+###
+
+<h3 align="center">⭐ Turning data and code into systems that make a difference.</h3>
