@@ -1,4 +1,4 @@
-<h2 align="left">Hi 👋! My name is Sumit Kumar and I'm a Software Engineer & Data Analysis Enthusiast from India.</h2>
+[<h2 align="left">Hi 👋! My name is Sumit Kumar and I'm a Software Engineer & Data Analysis Enthusiast from India.</h2>
 
 ---
 
@@ -94,3 +94,4 @@ An interactive 3x3 console-based game featuring image and numeric tiles, shuffle
 ---
 
 ⭐️ *From [Sumit Kumar](https://github.com/sumitkumar)*
+](https://meet.google.com/vnh-wkvi-fya)
