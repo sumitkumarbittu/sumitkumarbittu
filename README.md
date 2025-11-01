@@ -12,7 +12,7 @@
 <img align="right" height="150" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="coding gif" />
 
 ### 🧠 About Me  
-- 💻 Passionate about **AI, IoT and Automation Systems**  
+- 💻 Passionate about **AI, IoT, and Automation Systems**  
 - 🌍 Love building solutions that bridge physical devices and digital insights  
 - 🐍 Strong in **Python** (backend, automation & analytics) and **C++** (performance, embedded logic)  
 - 🌱 Exploring **Flask**, **Dash**, **IoT dashboards**, and real-time data integrations  
@@ -21,12 +21,19 @@
 ---
 
 ### ⚙️ Featured Projects  
-- 🧩 **AITeamCollab** — A collaborative workspace platform for team intelligence & visualization.  
-- 📊 **DataVisualizer** — Preprocess and transform CSV datasets into interactive, insightful charts.  
-- 💾 **AdvancedLZW** — A C++ implementation of the LZW compression algorithm for academic-grade usage.  
-- 🗂️ **mDFSWeb** — A distributed file system with lock-management, built in Python.  
-- 🧠 **AiAgent** — An AI-powered sentiment-analysis tool for extracting actionable insights from text feedback.  
-- 🎓 **GEU_Connect** — A scheduling platform enabling student-teacher appointments and better academic collaboration.
+
+<div align="center">
+
+| Project | Description | Tech Stack |
+|----------|--------------|------------|
+| 🧩 **[AITeamCollab](https://github.com/sumitkumarbittu/AITeamCollab)** | A collaborative workspace platform that integrates team intelligence, analytics, and smart task management. | `Python`, `Flask`, `JavaScript`, `Dash` |
+| 📊 **[DataVisualizer](https://github.com/sumitkumarbittu/DataVisualizer)** | Turn raw CSV data into clean, interactive dashboards for insights and visualization. | `Python`, `Dash`, `Plotly`, `Pandas` |
+| 💾 **[AdvancedLZW](https://github.com/sumitkumarbittu/AdvancedLZW)** | A C++ implementation of the LZW compression algorithm, optimized for speed and educational use. | `C++`, `File I/O`, `Compression Algorithms` |
+| 🗂️ **[mDFSWeb](https://github.com/sumitkumarbittu/mDFSWeb)** | A distributed file system with lock management and remote access, built using Python. | `Python`, `Networking`, `Flask` |
+| 🧠 **[AiAgent](https://github.com/sumitkumarbittu/AiAgent)** | Sentiment analysis system that extracts actionable insights from user feedback using NLP. | `Python`, `NLTK`, `Machine Learning` |
+| 🎓 **[GEU_Connect](https://github.com/sumitkumarbittu/GEU_Connect)** | Academic appointment scheduler enabling seamless student–teacher collaboration. | `Python`, `Flask`, `HTML`, `SQLite` |
+
+</div>
 
 ---
 
@@ -63,9 +70,9 @@
 <br clear="both">
 
 <div align="center">
-  <img src="https://github.com/sumitkumarbittu/snk/raw/output/github-contribution-grid-snake.svg" alt="Snake animation" width="100%" />
+  <img src="https://github.com/sumitkumarbittu/sumitkumarbittu/blob/output/github-contribution-grid-snake.svg" alt="Snake animation" width="100%" />
 </div>
 
 ---
 
-⭐️ *From [Sumit Kumar](https://github.com/sumitkumarbittu)*  
+<h3 align="center">⭐ Turning data and code into systems that make a difference.</h3>
