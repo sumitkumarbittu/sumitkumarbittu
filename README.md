@@ -1,10 +1,10 @@
-<h2 align="left">Hi 👋! My name is Sumit Kumar and I'm a Software Engineer & Data Analysis Enthusiast with experience in developing production-ready enterprise applications and open-source software.</h2>
+<h2 align="left">Hi 👋! My name is Sumit Kumar and I'm a Software Engineer & Data Analysis Enthusiast from India.</h2>
 
 ###
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=sumitkumarbittu&show_icons=true&theme=dracula&include_all_commits=true&count_private=true" height="150" alt="stats graph" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sumitkumarbittu&layout=compact&theme=dracula&langs_count=6" height="150" alt="languages graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=sumitkumarbittu&show_icons=true&include_all_commits=true&count_private=true&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=sumitkumarbittu&layout=compact&langs_count=6&theme=dracula&hide_border=false" height="150" alt="languages graph" />
 </div>
 
 ###
@@ -37,13 +37,19 @@
 
 <div align="left">
   <a href="https://www.linkedin.com/in/sumitkumarbittu/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="35" alt="LinkedIn" />
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&style=for-the-badge" height="35" alt="LinkedIn logo" />
   </a>
   <a href="mailto:sumitkumarbittu@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" height="35" alt="Gmail" />
+    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&style=for-the-badge" height="35" alt="Gmail logo" />
   </a>
   <a href="https://github.com/sumitkumarbittu" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" height="35" alt="GitHub" />
+    <img src="https://img.shields.io/static/v1?message=GitHub&logo=github&label=&color=181717&logoColor=white&style=for-the-badge" height="35" alt="GitHub logo" />
+  </a>
+  <a href="https://discord.com/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&style=for-the-badge" height="35" alt="Discord logo" />
+  </a>
+  <a href="https://www.instagram.com/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&style=for-the-badge" height="35" alt="Instagram logo" />
   </a>
 </div>
 
@@ -81,16 +87,13 @@ I’ve designed systems ranging from automated <b>waste sorting</b> and <b>scent
 
 <br clear="both">
 
-###
-
-<br clear="both">
-
 <h3 align="center">🐍 Watch my contributions come to life</h3>
 
-<div align="center">
-  <img src="https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg" alt="Snake animation" />
-</div>
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/sumitkumarbittu/snk/raw/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/sumitkumarbittu/snk/raw/output/github-contribution-grid-snake.svg" />
+  <img alt="GitHub contribution grid snake animation" src="https://github.com/sumitkumarbittu/snk/raw/output/github-contribution-grid-snake.svg" width="100%" />
+</picture>
 
 ###
 
