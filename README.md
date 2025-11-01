@@ -81,9 +81,20 @@ I’ve designed systems ranging from automated <b>waste sorting</b> and <b>scent
 
 <br clear="both">
 
+###
+
+<br clear="both">
+
+<h3 align="center">🐍 Watch my contributions come to life</h3>
+
 <div align="center">
-  <img src="https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg" alt="Snake animation" />
+  <img src="https://github.com/sumitkumarbittu/snk/raw/output/github-contribution-grid-snake.svg" alt="Snake animation" width="100%" />
 </div>
+
+###
+
+<h3 align="center">⭐ Turning data and code into systems that make a difference.</h3>
+
 
 ###
 
