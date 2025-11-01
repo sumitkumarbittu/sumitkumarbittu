@@ -1,4 +1,4 @@
-<h2 align="left">Hi 👋! My name is Sumit Kumar and I'm a Software Engineer & Data Analysis Enthusiast with expericence in developing production ready enterprise application and open source software.</h2>
+<h2 align="left">Hi 👋! My name is Sumit Kumar and I'm a Software Engineer & Data Analysis Enthusiast with Expericence in developing Production ready Enterprise application and Open Source Software.</h2>
 
 ###
 
