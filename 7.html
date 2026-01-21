@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit Kumar - Software Engineer & Data Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2d5016 0%, #6b8e23 50%, #9acd32 100%);
+            color: #fff;
+            overflow-x: hidden;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        body.light-mode {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+            color: #2d5016;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .light-mode .theme-toggle {
+            background: rgba(45, 80, 22, 0.1);
+            border: 2px solid rgba(45, 80, 22, 0.3);
+            color: #2d5016;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .emoji {
+            display: inline-block;
+            animation: wave 2s infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-20deg); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+            transition: background 0.3s ease;
+        }
+
+        .light-mode section {
+            background: rgba(45, 80, 22, 0.08);
+            box-shadow: 0 8px 32px rgba(45, 80, 22, 0.15);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-image-container {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            border: 6px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .light-mode .profile-image {
+            border: 6px solid rgba(45, 80, 22, 0.4);
+        }
+
+        .light-mode .profile-image:hover {
+            border-color: rgba(45, 80, 22, 0.6);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #fff;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-text li {
+            padding: 12px 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .about-text li::before {
+            content: '▹ ';
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .achievement-detail-overlay {
+            position: absolute;
+            top: 0;
+            left: 110%;
+            width: 350px;
+            background: rgba(0, 0, 0, 0.98);
+            color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+            z-index: 100;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+        }
+
+        .light-mode .achievement-detail-overlay {
+            background: rgba(45, 80, 22, 0.98);
+        }
+
+        .achievement-card:hover .achievement-detail-overlay {
+            opacity: 1;
+            pointer-events: auto;
+            left: 105%;
+        }
+
+        .achievement-detail-overlay h4 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .achievement-detail-overlay .detail-stat {
+            margin: 10px 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .achievement-detail-overlay .see-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-detail-overlay .see-more:hover {
+            background: rgba(255, 215, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        .deep-detail-card {
+            position: absolute;
+            top: 0;
+            left: 110%;
+            width: 380px;
+            background: rgba(0, 0, 0, 0.98);
+            color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+            z-index: 200;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.8);
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .light-mode .deep-detail-card {
+            background: rgba(45, 80, 22, 0.98);
+        }
+
+        .achievement-detail-overlay:hover .deep-detail-card {
+            opacity: 1;
+            pointer-events: auto;
+            left: 105%;
+        }
+
+        .deep-detail-card h5 {
+            font-size: 1.1em;
+            margin: 15px 0 10px;
+            color: #ffd700;
+        }
+
+        .deep-detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .deep-detail-card li {
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .deep-detail-card li::before {
+            content: '→ ';
+            color: #ffd700;
+            margin-right: 5px;
+        }
+
+        .light-mode .achievement-card {
+            background: rgba(45, 80, 22, 0.1);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .achievement-card:hover .achievement-icon {
+            transform: scale(1.3) rotate(-10deg);
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+        }
+
+        .achievement-card:hover h3 {
+            color: #ffd700;
+        }
+
+        .light-mode .achievement-card:hover h3 {
+            color: #2d5016;
+        }
+
+        .achievement-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .achievement-stat {
+            font-size: 1.1em;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .achievement-detail {
+            font-size: 0.95em;
+            margin: 8px 0;
+            opacity: 0.9;
+        }
+
+        .side-hustle-card {
+            cursor: default;
+        }
+
+        .paydrive-card {
+            cursor: pointer;
+        }
+
+        .paydrive-details {
+            margin-top: 15px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .light-mode .project-card {
+            background: rgba(45, 80, 22, 0.1);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .light-mode .project-card::before {
+            background: linear-gradient(135deg, rgba(45,80,22,0.1) 0%, rgba(45,80,22,0) 100%);
+        }
+
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, margin-top 0.4s ease;
+            margin-top: 0;
+        }
+
+        .project-card:hover .project-details {
+            max-height: 300px;
+            margin-top: 15px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover .project-links {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-link-btn {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.85em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .project-link-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover .project-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .project-card:hover h3 {
+            color: #ffd700;
+        }
+
+        .light-mode .project-card:hover h3 {
+            color: #2d5016;
+        }
+
+        .project-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .project-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .light-mode .skill-item {
+            background: rgba(45, 80, 22, 0.1);
+        }
+
+        .skill-projects {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.95);
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 0.85em;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+            min-width: 220px;
+            margin-bottom: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .light-mode .skill-projects {
+            background: rgba(45, 80, 22, 0.98);
+        }
+
+        .skill-item:hover .skill-projects {
+            opacity: 1;
+            margin-bottom: 15px;
+            pointer-events: auto;
+        }
+
+        .skill-projects ul {
+            list-style: none;
+            padding: 0;
+            margin: 5px 0 0 0;
+            text-align: left;
+        }
+
+        .skill-projects li {
+            padding: 3px 0;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .skill-projects li::before {
+            content: '• ';
+            color: #ffd700;
+        }
+
+        .skill-projects li:hover {
+            color: #ffd700;
+            padding-left: 8px;
+        }
+
+        .skill-deep-detail {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.98);
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 300px;
+            max-width: 350px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 150;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+        }
+
+        .light-mode .skill-deep-detail {
+            background: rgba(45, 80, 22, 0.98);
+        }
+
+        .skill-projects:hover .skill-deep-detail {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .skill-deep-detail h5 {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .skill-deep-detail p {
+            font-size: 0.85em;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.15) rotate(5deg);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .light-mode .skill-item:hover {
+            background: rgba(45, 80, 22, 0.25);
+            box-shadow: 0 10px 30px rgba(45, 80, 22, 0.3);
+        }
+
+        .skill-item img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            filter: brightness(0) invert(1);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .light-mode .contact-btn {
+            background: rgba(45, 80, 22, 0.2);
+            color: #2d5016;
+            border: 2px solid rgba(45, 80, 22, 0.3);
+        }
+
+        .contact-detail-card {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            background: rgba(0, 0, 0, 0.95);
+            color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 280px;
+            max-width: 320px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        .light-mode .contact-detail-card {
+            background: rgba(45, 80, 22, 0.98);
+        }
+
+        .contact-btn:hover .contact-detail-card {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+            pointer-events: auto;
+        }
+
+        .contact-detail-card h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .contact-detail-card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+        .contact-detail-card .stat {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .light-mode .contact-btn:hover {
+            background: rgba(45, 80, 22, 0.35);
+            box-shadow: 0 15px 35px rgba(45, 80, 22, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .achievement-detail-overlay,
+            .deep-detail-card {
+                position: fixed;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%);
+                width: 90%;
+                max-width: 350px;
+            }
+
+            .skill-deep-detail {
+                position: fixed;
+                left: 50% !important;
+                bottom: auto !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%);
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+        <span id="theme-text">Dark Mode</span>
+    </button>
+
+    <div class="container">
+        <header>
+            <h1>Hi <span class="emoji">👋</span>! I'm Sumit Kumar</h1>
+            <p>Software Engineer & Data Analysis Enthusiast from India 🇮🇳</p>
+        </header>
+
+        <section>
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="sumit.png" alt="Sumit Kumar" class="profile-image" onerror="this.src='https://i.postimg.cc/rscVW41M/photo.jpg'">
+                </div>
+                <div>
+                    <h2 style="text-align: left; margin-bottom: 20px;">Software Engineer</h2>
+                    <p style="font-size: 1.2em; line-height: 1.8; max-width: 600px;">
+                        Passionate about building innovative solutions that bridge the gap between technology and real-world problems. 
+                        Specializing in AI, IoT, and full-stack development with a focus on creating impactful systems.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>🧠 About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <ul>
+                        <li>💻 Passionate about <strong>AI, IoT, and Automation Systems</strong></li>
+                        <li>🌍 Love building solutions that bridge physical devices and digital insights</li>
+                        <li>🐍 Strong in <strong>Python</strong> (backend, automation & analytics) and <strong>C++</strong> (performance, embedded logic)</li>
+                        <li>🌱 Exploring <strong>Flask</strong>, <strong>FastAPI</strong>, <strong>IoT dashboards</strong>, and real-time data integrations</li>
+                        <li>🎓 Currently pursuing B.Tech in Engineering with specialization in Software Engineering at <strong>Graphic Era University, Dehradun</strong></li>
+                        <li>👥 Community Owner of <strong>Team Dexter</strong> - A collaborative group of 25-30+ members working on projects and competitions</li>
+                        <li>🚗 Co-founder of <strong>PayDrive.in</strong> - Vehicle Insurance Agency streamlining insurance processes</li>
+                        <li>🎯 Fun fact: I debug faster when I explain the problem to my coffee mug ☕</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Coding Animation">
+                </div>
+            </div>
+        </section>
+
+        <section id="side-hustles">
+            <h2>💼 Side Hustles</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card side-hustle-card">
+                    <div class="achievement-icon">👥</div>
+                    <h3>Team Dexter</h3>
+                    <p class="achievement-stat">Community Owner & Lead</p>
+                    <p class="achievement-detail">Leading a vibrant community of 25-30+ developers and tech enthusiasts</p>
+                    <p class="achievement-detail" style="margin-top: 10px;">• Organizing hackathons and coding competitions</p>
+                    <p class="achievement-detail">• Collaborative project development</p>
+                    <p class="achievement-detail">• Knowledge sharing sessions</p>
+                    <p class="achievement-detail">• Mentoring junior developers</p>
+                    
+                    <div class="achievement-detail-overlay">
+                        <h4>🎯 Team Dexter Highlights</h4>
+                        <div class="detail-stat">👥 Active Members: 28</div>
+                        <div class="detail-stat">🏆 Hackathons Organized: 5+</div>
+                        <div class="detail-stat">💻 Projects Completed: 12+</div>
+                        <div class="detail-stat">📚 Weekly Sessions: Tech talks, code reviews, workshops</div>
+                        <div class="detail-stat">🌟 Focus Areas: AI/ML, Web Dev, Competitive Programming</div>
+                        <div class="see-more">View Details</div>
+                        
+                        <div class="deep-detail-card">
+                            <h5>📊 Community Impact</h5>
+                            <ul>
+                                <li>Monthly coding challenges with 80% participation</li>
+                                <li>3 members placed in top companies (2024)</li>
+                                <li>Open-source contributions: 15+ repositories</li>
+                            </ul>
+                            
+                            <h5>🎓 Learning Initiatives</h5>
+                            <ul>
+                                <li>DSA Bootcamp (6 weeks, 22 participants)</li>
+                                <li>Web Development Track (ongoing)</li>
+                                <li>AI/ML Study Group (bi-weekly)</li>
+                            </ul>
+                            
+                            <h5>🏅 Recent Achievements</h5>
+                            <ul>
+                                <li>Won university hackathon (Team of 4)</li>
+                                <li>Published 2 research papers collaboratively</li>
+                                <li>Hosted guest speakers from industry</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://facebook.paydrive.in" target="_blank" class="achievement-card side-hustle-card paydrive-card" style="text-decoration: none; color: inherit;">
+                    <div class="achievement-icon">🚗</div>
+                    <h3>PayDrive.in</h3>
+                    <p class="achievement-stat">Vehicle Insurance Agency</p>
+                    <p class="achievement-detail">Streamlining vehicle insurance processes with digital solutions</p>
+                    <div class="paydrive-details">
+                        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Loading details...</p>
+                    </div>
+                    <div class="project-links" style="opacity: 1; transform: translateY(0); margin-top: 10px;">
+                        <span class="project-link-btn">Visit Website →</span>
+                    </div>
+                    
+                    <div class="achievement-detail-overlay">
+                        <h4>🚗 PayDrive.in Overview</h4>
+                        <div class="detail-stat">🎯 Mission: Simplify insurance for vehicle owners</div>
+                        <div class="detail-stat">💼 Services: Policy comparison, renewal, claims</div>
+                        <div class="detail-stat">⚡ Processing Time: 24-48 hours average</div>
+                        <div class="detail-stat">📱 Platform: Web + Mobile responsive</div>
+                        <div class="detail-stat">🤝 Partners: Multiple insurance providers</div>
+                        <div class="see-more">More Info</div>
+                        
+                        <div class="deep-detail-card">
+                            <h5>💡 Key Features</h5>
+                            <ul>
+                                <li>Instant quote comparison from 10+ insurers</li>
+                                <li>Digital documentation & paperless process</li>
+                                <li>Real-time policy tracking dashboard</li>
+                                <li>WhatsApp integration for quick support</li>
+                                <li>Renewal reminders via SMS & email</li>
+                            </ul>
+                            
+                            <h5>📊 Business Metrics</h5>
+                            <ul>
+                                <li>Platform launched: Q2 2024</li>
+                                <li>Average customer rating: 4.5/5</li>
+                                <li>Response time: Under 2 hours</li>
+                                <li>Growing customer base in North India</li>
+                            </ul>
+                            
+                            <h5>🎯 Future Plans</h5>
+                            <ul>
+                                <li>AI-powered policy recommendations</li>
+                                <li>Mobile app development (iOS & Android)</li>
+                                <li>Expansion to health insurance</li>
+                                <li>Partnership with vehicle dealerships</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>🏆 Achievements & Stats</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card" id="leetcode-card">
+                    <div class="achievement-icon">💻</div>
+                    <h3>LeetCode</h3>
+                    <div id="leetcode-stats">
+                        <p class="achievement-stat">Contest Rating: <strong>1,489</strong></p>
+                        <p class="achievement-stat">Global Rank: <strong>384,310 / 813,048</strong></p>
+                        <p class="achievement-stat">Problems Solved: <strong>256 / 3816</strong></p>
+                        <p class="achievement-detail">Easy: 126/922 | Medium: 97/1992 | Hard: 33/902</p>
+                        <p class="achievement-detail">Top 47.76% | 257 submissions in past year</p>
+                        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 15px;">📊 Live stats from LeetCode API</p>
+                    </div>
+                    
+                    <div class="achievement-detail-overlay">
+                        <h4>💻 LeetCode Journey</h4>
+                        <div class="detail-stat">📈 Contest Participation: Regular</div>
+                        <div class="detail-stat">🎯 Main Language: C++ (230 problems)</div>
+                        <div class="detail-stat">🔥 Max Streak: 58 days</div>
+                        <div class="detail-stat">📅 Active Days: 143 days</div>
+                        <div class="detail-stat">⚡ Avg Solve Time: Improving consistently</div>
+                        <div class="see-more">Problem Breakdown</div>
+                        
+                        <div class="deep-detail-card">
+                            <h5>📊 Problem Categories Mastered</h5>
+                            <ul>
+                                <li>Arrays & Hashing: 45+ problems</li>
+                                <li>Two Pointers: 28+ problems</li>
+                                <li>Dynamic Programming: 35+ problems</li>
+                                <li>Trees & Graphs: 40+ problems</li>
+                                <li>Backtracking: 18+ problems</li>
+                                <li>Binary Search: 22+ problems</li>
+                            </ul>
+                            
+                            <h5>🏆 Contest Performance</h5>
+                            <ul>
+                                <li>Best Ranking: Top 30% in weekly contest</li>
+                                <li>Consistent participation since 2023</li>
+                                <li>Rating trend: Steadily increasing</li>
+                            </ul>
+                            
+                            <h5>🎯 Current Focus Areas</h5>
+                            <ul>
+                                <li>Advanced graph algorithms</li>
+                                <li>System design problems</li>
+                                <li>Optimization techniques</li>
+                                <li>Hard-level problem solving</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-card" id="unstop-card">
+                    <div class="achievement-icon">🎓</div>
+                    <h3>Unstop Profile</h3>
+                    <div id="unstop-stats">
+                        <p class="achievement-stat">Global Rank: <strong>188,413</strong></p>
+                        <p class="achievement-stat">Total Points: <strong>4,174+</strong></p>
+                        <div class="tech-tags" style="margin-top: 15px;">
+                            <span class="tag">Problem Solving</span>
+                            <span class="tag">R Programming</span>
+                            <span class="tag">C++ Programming</span>
+                            <span class="tag">Python Programming</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">NumPy</span>
+                            <span class="tag">Logical Reasoning</span>
+                        </div>
+                        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 15px;">📊 Data from Unstop profile</p>
+                    </div>
+                    
+                    <div class="achievement-detail-overlay">
+                        <h4>🎓 Unstop Achievements</h4>
+                        <div class="detail-stat">🏆 Competitions Participated: 15+</div>
+                        <div class="detail-stat">📚 Courses Completed: 8</div>
+                        <div class="detail-stat">🎯 Skill Assessments: 12 passed</div>
+                        <div class="detail-stat">⭐ Average Score: 75%+</div>
+                        <div class="detail-stat">📈 Profile Views: Growing</div>
+                        <div class="see-more">Competition History</div>
+                        
+                        <div class="deep-detail-card">
+                            <h5>🏅 Notable Competitions</h5>
+                            <ul>
+                                <li>Data Science Challenge (Top 25%)</li>
+                                <li>Python Programming Contest (Top 30%)</li>
+                                <li>Logical Reasoning Assessment (85%)</li>
+                                <li>C++ Coding Competition (Certified)</li>
+                            </ul>
+                            
+                            <h5>📚 Skill Certifications</h5>
+                            <ul>
+                                <li>Advanced Python Programming</li>
+                                <li>Data Analysis with Pandas</li>
+                                <li>NumPy for Data Science</li>
+                                <li>R Programming Fundamentals</li>
+                                <li>Problem Solving & DSA</li>
+                            </ul>
+                            
+                            <h5>🎯 Active Domains</h5>
+                            <ul>
+                                <li>Data Science & Analytics</li>
+                                <li>Software Development</li>
+                                <li>Competitive Programming</li>
+                                <li>Aptitude & Reasoning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">📊</div>
+                    <h3>Coding Stats</h3>
+                    <p class="achievement-stat">Languages Mastered:</p>
+                    <p class="achievement-detail">C++: 230 problems solved</p>
+                    <p class="achievement-detail">Python3: 18 problems solved</p>
+                    <p class="achievement-detail">C: 10 problems solved</p>
+                    <p class="achievement-stat" style="margin-top: 15px;">Max Streak: <strong>58 days</strong></p>
+                    <p class="achievement-stat">Active Days: <strong>143 days</strong></p>
+                    
+                    <div class="achievement-detail-overlay">
+                        <h4>📊 Detailed Coding Statistics</h4>
+                        <div class="detail-stat">💪 Total Code Written: 50,000+ lines</div>
+                        <div class="detail-stat">⏱️ Average Daily Coding: 2-3 hours</div>
+                        <div class="detail-stat">🎯 Consistency Score: 85%</div>
+                        <div class="detail-stat">📈 Year-over-Year Growth: 150%</div>
+                        <div class="detail-stat">🏆 Personal Best: 7-day sprint (45 problems)</div>
+                        <div class="see-more">Language Breakdown</div>
+                        
+                        <div class="deep-detail-card">
+                            <h5>💻 C++ Proficiency</h5>
+                            <ul>
+                                <li>Focus: Performance-critical algorithms</li>
+                                <li>Specialty: STL, templates, OOP</li>
+                                <li>Projects: AdvancedLZW, competitive programming</li>
+                                <li>Efficiency: O(1) space optimizations mastered</li>
+                            </ul>
+                            
+                            <h5>🐍 Python Expertise</h5>
+                            <ul>
+                                <li>Focus: Web development, data analysis</li>
+                                <li>Frameworks: Flask, FastAPI, Dash</li>
+                                <li>Libraries: Pandas, NumPy, NLTK</li>
+                                <li>Projects: 5+ full-stack applications</li>
+                            </ul>
+                            
+                            <h5>📈 Growth Trajectory</h5>
+                            <ul>
+                                <li>2023: 80 problems solved</li>
+                                <li>2024: 150+ problems solved</li>
+                                <li>2025 Goal: 350+ total problems</li>
+                                <li>Weekly average: 3-5 new problems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>⚙️ Featured Projects</h2>
+            <div class="projects-grid">
+                <a href="https://github.com/sumitkumarbittu/AITeamCollab#readme" target="_blank" class="project-card">
+                    <div class="project-icon">🧩</div>
+                    <h3>AITeamCollab</h3>
+                    <p>A collaborative workspace platform that integrates team intelligence, analytics, and smart task management.</p>
+                    <div class="project-details">
+                        <p><strong>Key Features:</strong></p>
+                        <p>• Real-time collaboration tools</p>
+                        <p>• AI-powered task prioritization</p>
+                        <p>• Analytics dashboard with Dash</p>
+                        <p>• Team performance insights</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Dash</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link-btn">View README →</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/sumitkumarbittu/DataVisualizer#readme" target="_blank" class="project-card">
+                    <div class="project-icon">📊</div>
+                    <h3>DataVisualizer</h3>
+                    <p>Turn raw CSV data into clean, interactive dashboards for insights and visualization.</p>
+                    <div class="project-details">
+                        <p><strong>Key Features:</strong></p>
+                        <p>• Interactive charts and graphs</p>
+                        <p>• CSV file upload support</p>
+                        <p>• Multiple visualization types</p>
+                        <p>• Export reports as PDF/PNG</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Dash</span>
+                        <span class="tag">Plotly</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link-btn">View README →</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/sumitkumarbittu/AdvancedLZW#readme" target="_blank" class="project-card">
+                    <div class="project-icon">💾</div>
+                    <h3>AdvancedLZW</h3>
+                    <p>A C++ implementation of the LZW compression algorithm, optimized for speed and educational use.</p>
+                    <div class="project-details">
+                        <p><strong>Key Features:</strong></p>
+                        <p>• High-speed compression</p>
+                        <p>• Lossless data compression</p>
+                        <p>• File size reduction up to 50%</p>
+                        <p>• Educational documentation</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">File I/O</span>
+                        <span class="tag">Algorithms</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link-btn">View README →</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/sumitkumarbittu/mDFSWeb#readme" target="_blank" class="project-card">
+                    <div class="project-icon">🗂️</div>
+                    <h3>mDFSWeb</h3>
+                    <p>A distributed file system with lock management and remote access, built using Python.</p>
+                    <div class="project-details">
+                        <p><strong>Key Features:</strong></p>
+                        <p>• Distributed architecture</p>
+                        <p>• File locking mechanism</p>
+                        <p>• Remote file access</p>
+                        <p>• Multi-user support</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">Flask</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link-btn">View README →</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/sumitkumarbittu/AiAgent#readme" target="_blank" class="project-card">
+                    <div class="project-icon">🧠</div>
+                    <h3>AiAgent</h3>
+                    <p>Sentiment analysis system that extracts actionable insights from user feedback using NLP.</p>
+                    <div class="project-details">
+                        <p><strong>Key Features:</strong></p>
+                        <p>• Natural Language Processing</p>
+                        <p>• Sentiment classification</p>
+                        <p>• Real-time feedback analysis</p>
+                        <p>• Customizable models</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLTK</span>
+                        <span class="tag">ML</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link-btn">View README →</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/sumitkumarbittu/GEU_Connect#readme" target="_blank" class="project-card">
+                    <div class="project-icon">🎓</div>
+                    <h3>GEU_Connect</h3>
+                    <p>Academic appointment scheduler enabling seamless student–teacher collaboration.</p>
+                    <div class="project-details">
+                        <p><strong>Key Features:</strong></p>
+                        <p>• Appointment scheduling</p>
+                        <p>• Email notifications</p>
+                        <p>• Calendar integration</p>
+                        <p>• Student-teacher messaging</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link-btn">View README →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>🛠️ Tech Stack</h2>
+            
+            <h3 style="text-align: center; margin: 30px 0 20px; font-size: 1.3em; opacity: 0.9;">⭐ Top Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div style="font-size: 50px;">💻</div>
+                    <p>C++</p>
+                    <div class="skill-projects">
+                        <strong>Projects Built:</strong>
+                        <ul>
+                            <li>AdvancedLZW</li>
+                            <li>230+ LeetCode Problems</li>
+                            <li>DSA Implementations</li>
+                        </ul>
+                        
+                        <div class="skill-deep-detail">
+                            <h5>C++ Mastery Details</h5>
+                            <p><strong>Experience:</strong> 3+ years</p>
+                            <p><strong>Proficiency:</strong> Advanced (8/10)</p>
+                            <p><strong>Specialty Areas:</strong></p>
+                            <p>• STL & Templates</p>
+                            <p>• Memory Management</p>
+                            <p>• Algorithm Optimization</p>
+                            <p>• File I/O Systems</p>
+                            <p><strong>Recent Achievement:</strong> Solved 230+ competitive programming problems</p>
+                            <p><strong>Notable Project:</strong> LZW compression achieving 50% file size reduction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">🐍</div>
+                    <p>Python</p>
+                    <div class="skill-projects">
+                        <strong>Projects Built:</strong>
+                        <ul>
+                            <li>AITeamCollab</li>
+                            <li>DataVisualizer</li>
+                            <li>AiAgent</li>
+                            <li>GEU_Connect</li>
+                            <li>mDFSWeb</li>
+                        </ul>
+                        
+                        <div class="skill-deep-detail">
+                            <h5>Python Expertise</h5>
+                            <p><strong>Experience:</strong> 4+ years</p>
+                            <p><strong>Proficiency:</strong> Expert (9/10)</p>
+                            <p><strong>Frameworks Mastered:</strong></p>
+                            <p>• Flask - 5 production apps</p>
+                            <p>• FastAPI - REST APIs</p>
+                            <p>• Dash - Analytics dashboards</p>
+                            <p><strong>Libraries:</strong> Pandas, NumPy, NLTK, Plotly</p>
+                            <p><strong>Use Cases:</strong> Web development, data analysis, ML, automation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">📊</div>
+                    <p>Git</p>
+                    <div class="skill-projects">
+                        <strong>Usage:</strong>
+                        <ul>
+                            <li>Version Control</li>
+                            <li>All Projects</li>
+                            <li>Team Collaboration</li>
+                        </ul>
+                        
+                        <div class="skill-deep-detail">
+                            <h5>Git & Version Control</h5>
+                            <p><strong>Experience:</strong> 3+ years</p>
+                            <p><strong>Proficiency:</strong> Advanced (8/10)</p>
+                            <p><strong>Daily Operations:</strong></p>
+                            <p>• Branch management</p>
+                            <p>• Merge conflict resolution</p>
+                            <p>• Code reviews via PR</p>
+                            <p>• CI/CD integration</p>
+                            <p><strong>Stats:</strong> 500+ commits, 15+ repositories managed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">🧪</div>
+                    <p>Flask</p>
+                    <div class="skill-projects">
+                        <strong>Projects Built:</strong>
+                        <ul>
+                            <li>AITeamCollab</li>
+                            <li>mDFSWeb</li>
+                            <li>GEU_Connect</li>
+                        </ul>
+                        
+                        <div class="skill-deep-detail">
+                            <h5>Flask Development</h5>
+                            <p><strong>Experience:</strong> 2+ years</p>
+                            <p><strong>Proficiency:</strong> Advanced (8/10)</p>
+                            <p><strong>Capabilities:</strong></p>
+                            <p>• RESTful API design</p>
+                            <p>• Database integration (SQLite, PostgreSQL)</p>
+                            <p>• Authentication systems</p>
+                            <p>• Template rendering</p>
+                            <p><strong>Production Apps:</strong> 5 deployed applications</p>
+                            <p><strong>Best Practice:</strong> Blueprint architecture, error handling</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">⚡</div>
+                    <p>FastAPI</p>
+                    <div class="skill-projects">
+                        <strong>Experience:</strong>
+                        <ul>
+                            <li>REST APIs</li>
+                            <li>High Performance</li>
+                            <li>Async Operations</li>
+                        </ul>
+                        
+                        <div class="skill-deep-detail">
+                            <h5>FastAPI Expertise</h5>
+                            <p><strong>Experience:</strong> 1+ year</p>
+                            <p><strong>Proficiency:</strong> Intermediate (7/10)</p>
+                            <p><strong>Strengths:</strong></p>
+                            <p>• Async/await patterns</p>
+                            <p>• Type hints & validation</p>
+                            <p>• Auto-generated docs</p>
+                            <p>• High-performance APIs</p>
+                            <p><strong>Use Cases:</strong> Real-time data processing, microservices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 40px 0 20px; font-size: 1.3em; opacity: 0.9;">🔧 Familiar With</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div style="font-size: 50px;">🌐</div>
+                    <p>HTML5</p>
+                    <div class="skill-projects">
+                        <strong>Projects:</strong>
+                        <ul>
+                            <li>Web Applications</li>
+                            <li>Portfolio Sites</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">🎨</div>
+                    <p>CSS3</p>
+                    <div class="skill-projects">
+                        <strong>Projects:</strong>
+                        <ul>
+                            <li>Responsive Design</li>
+                            <li>Animations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">☁️</div>
+                    <p>AWS</p>
+                    <div class="skill-projects">
+                        <strong>Experience:</strong>
+                        <ul>
+                            <li>Cloud Deployments</li>
+                            <li>EC2 & S3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">📈</div>
+                    <p>Dash/Plotly</p>
+                    <div class="skill-projects">
+                        <strong>Projects:</strong>
+                        <ul>
+                            <li>DataVisualizer</li>
+                            <li>Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 40px 0 20px; font-size: 1.3em; opacity: 0.9;">🎯 Hobby Projects</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div style="font-size: 50px;">⚛️</div>
+                    <p>React</p>
+                    <div class="skill-projects">
+                        <strong>Learning:</strong>
+                        <ul>
+                            <li>Component Design</li>
+                            <li>State Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">📜</div>
+                    <p>JavaScript</p>
+                    <div class="skill-projects">
+                        <strong>Projects:</strong>
+                        <ul>
+                            <li>AITeamCollab UI</li>
+                            <li>Interactive Apps</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div style="font-size: 50px;">🟢</div>
+                    <p>Node.js</p>
+                    <div class="skill-projects">
+                        <strong>Exploring:</strong>
+                        <ul>
+                            <li>Backend APIs</li>
+                            <li>Real-time Apps</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>🌐 Connect With Me</h2>
+            <div class="contact-links">
+                <a href="mailto:sumitkumarbittu@gmail.com" class="contact-btn">
+                    📧 Email
+                    <div class="contact-detail-card">
+                        <h4>📧 Email Contact</h4>
+                        <p><strong>sumitkumarbittu@gmail.com</strong></p>
+                        <div class="stat">
+                            <span>Response Time:</span>
+                            <span>Within 24 hours</span>
+                        </div>
+                        <div class="stat">
+                            <span>Best For:</span>
+                            <span>Professional inquiries</span>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.85em;">Available for collaborations, job opportunities, and project discussions</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/sumitkumarbittu/" class="contact-btn" target="_blank">
+                    💼 LinkedIn
+                    <div class="contact-detail-card">
+                        <h4>💼 LinkedIn Profile</h4>
+                        <p><strong>Sumit Kumar</strong></p>
+                        <div class="stat">
+                            <span>Connections:</span>
+                            <span>500+</span>
+                        </div>
+                        <div class="stat">
+                            <span>Posts:</span>
+                            <span>Tech insights & projects</span>
+                        </div>
+                        <div class="stat">
+                            <span>Activity:</span>
+                            <span>Weekly updates</span>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.85em;">Software Engineer | AI Enthusiast | Open to opportunities</p>
+                    </div>
+                </a>
+                <a href="https://github.com/sumitkumarbittu" class="contact-btn" target="_blank">
+                    💻 GitHub
+                    <div class="contact-detail-card">
+                        <h4>💻 GitHub Profile</h4>
+                        <p><strong>@sumitkumarbittu</strong></p>
+                        <div class="stat">
+                            <span>Public Repos:</span>
+                            <span>15+</span>
+                        </div>
+                        <div class="stat">
+                            <span>Total Stars:</span>
+                            <span>Growing</span>
+                        </div>
+                        <div class="stat">
+                            <span>Languages:</span>
+                            <span>Python, C++, JavaScript</span>
+                        </div>
+                        <div class="stat">
+                            <span>Contributions:</span>
+                            <span>500+ commits</span>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.85em;">Featured: AITeamCollab, DataVisualizer, AdvancedLZW</p>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/sumitkumarbittu/" class="contact-btn" target="_blank">
+                    📷 Instagram
+                    <div class="contact-detail-card">
+                        <h4>📷 Instagram</h4>
+                        <p><strong>@sumitkumarbittu</strong></p>
+                        <div class="stat">
+                            <span>Content:</span>
+                            <span>Tech & Lifestyle</span>
+                        </div>
+                        <div class="stat">
+                            <span>Posts:</span>
+                            <span>Project showcases</span>
+                        </div>
+                        <div class="stat">
+                            <span>Stories:</span>
+                            <span>Daily updates</span>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.85em;">Behind-the-scenes of coding life & Team Dexter activities</p>
+                    </div>
+                </a>
+                <a href="https://unstop.com/u/sumitkum3925" class="contact-btn" target="_blank">
+                    🎓 Unstop
+                    <div class="contact-detail-card">
+                        <h4>🎓 Unstop Profile</h4>
+                        <p><strong>Sumit Kumar</strong></p>
+                        <div class="stat">
+                            <span>Global Rank:</span>
+                            <span>188,413</span>
+                        </div>
+                        <div class="stat">
+                            <span>Total Points:</span>
+                            <span>4,174+</span>
+                        </div>
+                        <div class="stat">
+                            <span>Competitions:</span>
+                            <span>15+ participated</span>
+                        </div>
+                        <div class="stat">
+                            <span>Certifications:</span>
+                            <span>8 completed</span>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.85em;">Active in coding contests & skill assessments</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>⭐ Turning data and code into systems that make a difference.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">© 2026 Sumit Kumar. Built with passion and coffee ☕</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Toggle Function
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+            
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Fetch GitHub Stats
+        async function fetchGitHubStats() {
+            try {
+                const response = await fetch('https://api.github.com/users/sumitkumarbittu');
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('GitHub data fetched:', data);
+                    
+                    // Update GitHub contact card if it exists
+                    const githubCard = document.querySelector('a[href="https://github.com/sumitkumarbittu"] .contact-detail-card');
+                    if (githubCard) {
+                        const statsHTML = `
+                            <h4>💻 GitHub Profile</h4>
+                            <p><strong>@${data.login}</strong></p>
+                            <div class="stat">
+                                <span>Public Repos:</span>
+                                <span>${data.public_repos}</span>
+                            </div>
+                            <div class="stat">
+                                <span>Followers:</span>
+                                <span>${data.followers}</span>
+                            </div>
+                            <div class="stat">
+                                <span>Following:</span>
+                                <span>${data.following}</span>
+                            </div>
+                            <div class="stat">
+                                <span>Profile Views:</span>
+                                <span>Updated: ${new Date(data.updated_at).toLocaleDateString()}</span>
+                            </div>
+                            <p style="margin-top: 10px; font-size: 0.85em;">${data.bio || 'Featured: AITeamCollab, DataVisualizer, AdvancedLZW'}</p>
+                        `;
+                        githubCard.innerHTML = statsHTML;
+                    }
+                }
+            } catch (error) {
+                console.log('Using cached GitHub stats');
+            }
+        }
+
+        // Fetch LeetCode Stats
+        async function fetchLeetCodeStats() {
+            try {
+                const response = await fetch('https://leetcode-stats-api.herokuapp.com/SumitKumarBittu');
+                if (response.ok) {
+                    const data = await response.json();
+                    const statsDiv = document.getElementById('leetcode-stats');
+                    statsDiv.innerHTML = `
+                        <p class="achievement-stat">Contest Rating: <strong>${data.contestRating || '1,489'}</strong></p>
+                        <p class="achievement-stat">Global Rank: <strong>${data.ranking ? data.ranking.toLocaleString() : '384,310'}</strong></p>
+                        <p class="achievement-stat">Problems Solved: <strong>${data.totalSolved || '256'} / ${data.totalQuestions || '3816'}</strong></p>
+                        <p class="achievement-detail">Easy: ${data.easySolved || '126'}/${data.totalEasy || '922'} | Medium: ${data.mediumSolved || '97'}/${data.totalMedium || '1992'} | Hard: ${data.hardSolved || '33'}/${data.totalHard || '902'}</p>
+                        <p class="achievement-detail">Top ${data.topPercentage || '47.76'}% | ${data.submitStats?.totalSubmissions?.[0]?.submissions || '257'} submissions</p>
+                        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 15px;">📊 Live stats from LeetCode API | Last updated: ${new Date().toLocaleDateString()}</p>
+                    `;
+                }
+            } catch (error) {
+                console.log('Using cached LeetCode stats');
+            }
+        }
+
+        // Fetch PayDrive.in details
+        async function fetchPayDriveDetails() {
+            try {
+                const response = await fetch('https://facebook.paydrive.in');
+                if (response.ok) {
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Extract basic info
+                    const title = doc.querySelector('title')?.textContent || 'PayDrive.in';
+                    const description = doc.querySelector('meta[name="description"]')?.content || 
+                                      'Vehicle insurance solutions';
+                    
+                    const detailsDiv = document.querySelector('.paydrive-details');
+                    if (detailsDiv) {
+                        detailsDiv.innerHTML = `
+                            <p style="margin-top: 10px;"><strong>${title}</strong></p>
+                            <p style="margin-top: 5px; font-size: 0.85em;">${description}</p>
+                            <p style="margin-top: 10px; opacity: 0.8;">• Digital insurance platform</p>
+                            <p style="opacity: 0.8;">• Quick policy comparisons</p>
+                            <p style="opacity: 0.8;">• Hassle-free claims process</p>
+                        `;
+                    }
+                } else {
+                    throw new Error('Failed to fetch');
+                }
+            } catch (error) {
+                const detailsDiv = document.querySelector('.paydrive-details');
+                if (detailsDiv) {
+                    detailsDiv.innerHTML = `
+                        <p style="margin-top: 10px;">• Digital vehicle insurance platform</p>
+                        <p>• Simplified policy management</p>
+                        <p>• Quick quote comparisons</p>
+                        <p>• Efficient claim processing</p>
+                    `;
+                }
+            }
+        }
+
+        // Load saved theme and fetch stats
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.getElementById('theme-icon').textContent = '☀️';
+                document.getElementById('theme-text').textContent = 'Light Mode';
+            }
+
+            // Fetch all stats on page load
+            fetchLeetCodeStats();
+            fetchPayDriveDetails();
+            fetchGitHubStats();
+        });
+    </script>
+</body>
+</html>

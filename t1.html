@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sumit Kumar — Tools & Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #161922;
+      --text: #e6e8eb;
+      --muted: #9aa0aa;
+      --accent: #4da3ff;
+      --border: #24283a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 56px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin: 0;
+    }
+
+    p {
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .tool {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .tool span {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .tool ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .tool li {
+      color: var(--muted);
+      margin: 6px 0;
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .tools {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Sumit Kumar — Tools & Systems</h1>
+    <p class="subtitle">
+      I build practical, production-ready tools for data, analytics, and internal systems.
+      Focused on speed, clarity, and real-world usage.
+    </p>
+
+    <h2>Tools & Systems</h2>
+
+    <div class="tools">
+
+      <div class="tool">
+        <h3>🗄️ DataBase Query Executor (PostgreSQL)</h3>
+        <span>Fast admin access</span>
+        <ul>
+          <li>Run PostgreSQL queries directly from the browser</li>
+          <li>Simple connection string setup</li>
+          <li>Clean tabular results with export</li>
+          <li>Live system clock for timezone awareness</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>📊 Analytics Dashboard</h3>
+        <span>Website data visualization</span>
+        <ul>
+          <li>Works with live DB or CSV uploads</li>
+          <li>Charts, filters, and KPIs</li>
+          <li>Dark & light mode</li>
+          <li>Export filtered data</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>⚡ Webpage Analysis Server</h3>
+        <span>Lightweight activity tracking</span>
+        <ul>
+          <li>Heartbeat-based visitor tracking</li>
+          <li>Batch database writes</li>
+          <li>Free-tier friendly design</li>
+          <li>Clean session-level data</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>💬 Chat – Ask Support</h3>
+        <span>Website support widget</span>
+        <ul>
+          <li>Floating chat widget</li>
+          <li>File attachments supported</li>
+          <li>Works with static sites</li>
+          <li>Lightweight backend</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>💬 dbchat — Admin Chat Dashboard</h3>
+        <span>Moderation & replies</span>
+        <ul>
+          <li>Admin UI for chat messages</li>
+          <li>DB and CSV modes</li>
+          <li>Conversation-style interface</li>
+          <li>Built for internal teams</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>🧩 DBI — Database File Injector</h3>
+        <span>Data ingestion</span>
+        <ul>
+          <li>Upload CSV or JSON to PostgreSQL</li>
+          <li>Handles large files efficiently</li>
+          <li>Background processing</li>
+          <li>Docker & cloud ready</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>🤖 DataVisualizer</h3>
+        <span>CSV analysis & visualization</span>
+        <ul>
+          <li>Analyze CSV data quickly</li>
+          <li>Generate charts and visuals</li>
+          <li>Reusable preprocessing code</li>
+          <li>Guided step-by-step workflow</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>📓 Notebook OS (.NOTE)</h3>
+        <span>Local-first research notebook</span>
+        <ul>
+          <li>Notes, reading lists, and projects</li>
+          <li>Everything stored locally</li>
+          <li>Export & import via .NOTE file</li>
+          <li>Privacy-first design</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>🧠 Schema Builder Pro</h3>
+        <span>Backend generator</span>
+        <ul>
+          <li>Visual schema design</li>
+          <li>Generates production-ready backend code</li>
+          <li>Validation & file uploads included</li>
+          <li>Deployment-ready output</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <h3>🚀 Smart QR Generator</h3>
+        <span>High-quality QR codes</span>
+        <ul>
+          <li>Multiple QR types supported</li>
+          <li>Full design customization</li>
+          <li>Batch generation</li>
+          <li>Exports up to 16K resolution</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      Built for internal tools, admin dashboards, and real-world workflows.
+    </div>
+
+  </div>
+
+</body>
+</html>

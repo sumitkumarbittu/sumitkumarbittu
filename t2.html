@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sumit Kumar — Tools & Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #0a0b0f;
+      --bg-gradient: linear-gradient(135deg, #0a0b0f 0%, #141620 100%);
+      --card: #1a1d2e;
+      --card-hover: #222538;
+      --text: #f0f2f5;
+      --muted: #a0a8b8;
+      --accent: #4d9fff;
+      --accent-glow: rgba(77, 159, 255, 0.2);
+      --border: #2a2f45;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 80px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #4d9fff 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+
+    .stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 48px;
+      text-align: center;
+      position: relative;
+      animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-3);
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .tool {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInUp 0.6s ease-out backwards;
+      cursor: pointer;
+    }
+
+    .tool:nth-child(1) { animation-delay: 0.1s; }
+    .tool:nth-child(2) { animation-delay: 0.15s; }
+    .tool:nth-child(3) { animation-delay: 0.2s; }
+    .tool:nth-child(4) { animation-delay: 0.25s; }
+    .tool:nth-child(5) { animation-delay: 0.3s; }
+    .tool:nth-child(6) { animation-delay: 0.35s; }
+    .tool:nth-child(7) { animation-delay: 0.4s; }
+    .tool:nth-child(8) { animation-delay: 0.45s; }
+    .tool:nth-child(9) { animation-delay: 0.5s; }
+    .tool:nth-child(10) { animation-delay: 0.55s; }
+
+    .tool::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-3);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .tool:hover::before {
+      transform: scaleX(1);
+    }
+
+    .tool::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .tool:hover::after {
+      opacity: 1;
+    }
+
+    .tool:hover {
+      transform: translateY(-8px);
+      background: var(--card-hover);
+      border-color: var(--accent);
+      box-shadow: 0 20px 60px rgba(77, 159, 255, 0.15);
+    }
+
+    .tool-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+
+    .tool:hover .tool-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool-tag {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      padding: 4px 12px;
+      background: var(--accent-glow);
+      border-radius: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool ul {
+      list-style: none;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool li {
+      color: var(--muted);
+      margin: 10px 0;
+      padding-left: 24px;
+      position: relative;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .tool li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .tool:hover li {
+      color: #d0d5e0;
+    }
+
+    .tool:hover li::before {
+      transform: translateX(4px);
+    }
+
+    .footer {
+      margin-top: 120px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      animation: fadeInUp 0.8s ease-out 0.6s backwards;
+    }
+
+    .footer-links {
+      margin-top: 16px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .tools {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .container {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>Sumit Kumar</h1>
+      <p class="subtitle">
+        Building practical, production-ready tools for data, analytics, and internal systems.
+        Focused on speed, clarity, and real-world usage.
+      </p>
+      
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Production Tools</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Open Source</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Cloud Ready</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>Tools & Systems</h2>
+
+    <div class="tools">
+
+      <div class="tool">
+        <div class="tool-icon">🗄️</div>
+        <h3>DataBase Query Executor</h3>
+        <span class="tool-tag">Fast Admin Access</span>
+        <ul>
+          <li>Run PostgreSQL queries directly from the browser</li>
+          <li>Simple connection string setup</li>
+          <li>Clean tabular results with export</li>
+          <li>Live system clock for timezone awareness</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">📊</div>
+        <h3>Analytics Dashboard</h3>
+        <span class="tool-tag">Data Visualization</span>
+        <ul>
+          <li>Works with live DB or CSV uploads</li>
+          <li>Charts, filters, and KPIs</li>
+          <li>Dark & light mode</li>
+          <li>Export filtered data</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">⚡</div>
+        <h3>Webpage Analysis Server</h3>
+        <span class="tool-tag">Activity Tracking</span>
+        <ul>
+          <li>Heartbeat-based visitor tracking</li>
+          <li>Batch database writes</li>
+          <li>Free-tier friendly design</li>
+          <li>Clean session-level data</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">💬</div>
+        <h3>Chat – Ask Support</h3>
+        <span class="tool-tag">Support Widget</span>
+        <ul>
+          <li>Floating chat widget</li>
+          <li>File attachments supported</li>
+          <li>Works with static sites</li>
+          <li>Lightweight backend</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">💬</div>
+        <h3>dbchat — Admin Dashboard</h3>
+        <span class="tool-tag">Moderation & Replies</span>
+        <ul>
+          <li>Admin UI for chat messages</li>
+          <li>DB and CSV modes</li>
+          <li>Conversation-style interface</li>
+          <li>Built for internal teams</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">🧩</div>
+        <h3>DBI — Database File Injector</h3>
+        <span class="tool-tag">Data Ingestion</span>
+        <ul>
+          <li>Upload CSV or JSON to PostgreSQL</li>
+          <li>Handles large files efficiently</li>
+          <li>Background processing</li>
+          <li>Docker & cloud ready</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">🤖</div>
+        <h3>DataVisualizer</h3>
+        <span class="tool-tag">CSV Analysis</span>
+        <ul>
+          <li>Analyze CSV data quickly</li>
+          <li>Generate charts and visuals</li>
+          <li>Reusable preprocessing code</li>
+          <li>Guided step-by-step workflow</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">📓</div>
+        <h3>Notebook OS (.NOTE)</h3>
+        <span class="tool-tag">Local-First</span>
+        <ul>
+          <li>Notes, reading lists, and projects</li>
+          <li>Everything stored locally</li>
+          <li>Export & import via .NOTE file</li>
+          <li>Privacy-first design</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">🧠</div>
+        <h3>Schema Builder Pro</h3>
+        <span class="tool-tag">Backend Generator</span>
+        <ul>
+          <li>Visual schema design</li>
+          <li>Generates production-ready backend code</li>
+          <li>Validation & file uploads included</li>
+          <li>Deployment-ready output</li>
+        </ul>
+      </div>
+
+      <div class="tool">
+        <div class="tool-icon">🚀</div>
+        <h3>Smart QR Generator</h3>
+        <span class="tool-tag">High Quality</span>
+        <ul>
+          <li>Multiple QR types supported</li>
+          <li>Full design customization</li>
+          <li>Batch generation</li>
+          <li>Exports up to 16K resolution</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <p>Built for internal tools, admin dashboards, and real-world workflows.</p>
+      <div class="footer-links">
+        <a href="https://github.com">GitHub</a>
+        <a href="mailto:contact@example.com">Contact</a>
+        <a href="#">Documentation</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
